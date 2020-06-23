@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Solicitud de Devolución</h2>
+
+<div class="container body-content">
+    <div id="colorlib-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="contact-wrap">
+                        <br />
+                        <h4>Completa la siguiente solicutud y nos mantendremos en contacto contigo lo más rápido posible</h4><br />
+                        <form method="post" id="myForm">
+                            <h3>Datos personales </h3>
+                            <div class="row form-group">
+                                <div class="col-md-4 padding-bottom">
+                                    <label for="fname">Nombre</label>
+                                    <input type="text" class="form-control" value="Nataly" name="nombre" id="nombre" disabled>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="lname">Apellido(s)</label>
+                                    <input type="text" class="form-control" value="Ontiveros" name="apellido" id="apellido" disabled>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" value="nath@gmai.com" name="correoo" id="correoo" disabled>
+                                </div>
+                            </div>
+
+                            <h3>Datos del producto </h3>
+                            <div class="row form-group">
+                                <div class="col-md-4">
+                                    <label for="email">Nombre del producto </label>
+                                    <input type="text" class="form-control" value="Paracetamol" name="nombreP" id="nombreP" disabled>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="email">ID del producto </label>
+                                    <input type="text" class="form-control" value="09" name="idP" id="idP" disabled>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="email">Proveedor </label>
+                                    <input type="text" class="form-control" value="FarmaciasPlus" name="prove" id="prove" disabled>
+                                </div>
+                            </div>
+
+                            <h3>Datos de la compra </h3>
+                            <div class="row form-group">
+                                <div class="col-md-4">
+                                    <label for="email">Cantidad </label>
+                                    <input type="text" class="form-control" value="1" name="cantidad" id="cantidad" disabled>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="email">Total de la compra </label>
+                                    <input type="text" class="form-control" value="80" name="total" id="total" disabled>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="email">Status de la compra </label>
+                                    <input type="text" class="form-control" value="Entregado" name="status" id="status" disabled>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-4">
+                                    <label for="email">ID de la compra </label>
+                                    <input type="text" class="form-control" value="2" name="idcompra" id="idcompra" disabled>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="email">Fecha de compra </label>
+                                    <input type="text" class="form-control" value="20/06/2020" name="fecha" id="fecha" disabled>
+                                </div>
+                            </div>
+
+                            <h3>Motivos de devolución </h3>
+                            <div class="row form-group">
+                                <div class="col-md-3">
+                                    <input type="radio" id="male" name="gender" value="Entrega incompleta">
+                                    <label for="male">Entrega incompleta</label><br>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="radio" id="male" name="gender" value="entrega">
+                                    <label for="male">No era lo que esperaba</label><br>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="radio" id="male" name="gender" value="entrega">
+                                    <label for="male">Llego otro producto</label><br>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="radio" id="male" name="gender" value="entrega">
+                                    <label for="male">Llego en malas condiciones</label><br>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3">
+                                    <input type="radio" id="male" name="gender" value="Entrega incompleta">
+                                    <label for="male">El producto venía caducado</label><br>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="radio" id="male" name="gender" value="entrega">
+                                    <label for="male">La caja venia abierta</label><br>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="radio" id="male" name="gender" value="entrega">
+                                    <label for="male">El producto venia incompleto</label><br>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="radio" id="male" name="gender" value="entrega">
+                                    <label for="male">Otro</label><br>
+                                </div>
+                            </div>
+
+                            
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <h3>Explíca brevemente los motivos de devolución </h3>
+                                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="form-control" placeholder="Escribe el por qué quieres realizar la devolución"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="button" onclick="cleanForm()" value="Mandar Solicitud" class="btn btn-primary" id="enviar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function cleanForm() {
+
+        $("#nombre").val("");
+        $("#apellido").val("");
+        $("#correoo").val("");
+        $("#nombreP").val("");
+        $("#idP").val("");
+        $("#prove").val("");
+        $("#cantidad").val("");
+        $("#total").val("");
+        $("#status").val("");
+        $("#idcompra").val("");
+        $("#fecha").val("");
+        $("#mensaje").val("");
+
+
+    }
+</script>
+

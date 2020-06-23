@@ -1,0 +1,63 @@
+﻿
+@model IEnumerable<Ecommerce.Models.Productos>
+
+
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Productos</h2>
+<br />
+<h3>Lista de productos <b>sin precio</b> de venta</h3>
+<br />
+<div class="container-fluid">
+    <div class="row m-5 table-responsive">
+        <table class="table shadow " id="dsTable">
+            <thead class=" text-center">
+                <tr>
+                    <th scope="col">Producto sin Precio</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Precio de Compra</th>
+                    <th scope="col">Precio de venta sugerido</th>
+                    <th scope="col">Modificar precio de venta sugerido</th>
+                    <th scope="col">Mas información</th>
+                    <th scope="col">Solicitar autorización</th>
+                </tr>
+            </thead>
+
+
+            <tbody class="text-center">
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Marca)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Costo_unitario)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Precio_final)</td>
+                    <td>
+                        @Html.ActionLink("Modificar precio", "EditPrecio", new { id = item.Id })
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Detalles", "Details", new { id = item.Id })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Solicitar", "EditS", new { id = item.Id })
+                    </td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+
+
+<script>
+
+
+</script>

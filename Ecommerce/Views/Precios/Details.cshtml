@@ -1,0 +1,56 @@
+﻿@using Ecommerce.Models
+@model Ecommerce.Models.Productos
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Detalles del producto</h2>
+<form>
+    <p>
+        <button class="btn btn-light" formaction="/Precios">Regresar a la lista de productos</button>
+    </p>
+</form>
+<table class="table">
+    <tr>
+        <th>
+            Producto
+        </th>
+        <th>
+            Descripción
+        </th>
+        <th>
+            Proveedor
+        </th>
+        <th>
+            Sabor
+        </th>
+        <th>
+            Time-Mount
+        </th>
+        <th>
+            Time-Days
+        </th>
+    </tr>
+  
+    <tr>
+        <td>
+            @Model.Nombre
+        </td>
+        <td>
+            @Model.Descripcion
+        </td>
+        <td>
+            @Model.IdProvedor
+        </td>
+        <td>
+            @Model.Sabor
+        </td>
+        <td>
+            @Model.Time_Mount.ToString()
+        </td>
+        <td>
+            @Model.Time_Day.ToString()
+        </td>
+    </tr>
+    
+</table>

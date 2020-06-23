@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Ecommerce.Models.Productos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Promociones</h2>
+<br />
+<h3>Lista de productos existentes con<b> promociones</b> </h3>
+<br />
+<div class="container-fluid">
+    <div class="row m-5 table-responsive">
+        <table class="table shadow " id="dsTable">
+            <thead class=" text-center">
+                <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio de Venta</th>
+                    <th scope="col">Porcentaje</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Nuevo Precio propuesto</th>
+                    <th scope="col">Editar promoción</th>
+                    <th scope="col">Aplicar promoción</th>
+                    <th scope="col">Mas información</th>
+                    <th scope="col">Solicitar autorización</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach (var item in Model)
+                {
+                <tr id="prub">
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Precio_final)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Porcentage_descuento)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DescripcionProm)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Precio_Antiguo)</td>
+
+                    <td>
+                        @Html.ActionLink("Editar", "EditPrecio", new { id = item.Id })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Aplicar Descuento", "EditDesc", new { id = item.Id , pro= item.Porcentage_descuento })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Detalles producto", "Details", new { id = item.Id })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Solicitar", "EditS", new { id = item.Id })
+                    </td>
+                </tr>
+                }
+                </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Más información del producto</h4>
+            </div>
+            <div class="modal-body">
+                <h4>Descripción: </h4><p>Alivia dolores.</p>
+                <h4>Imagen: </h4><p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function enviar(row) {
+        var d = row.parentNode.parentNode.rowIndex;
+        document.getElementById('dsTable').deleteRow(d);
+    }
+</script>
+

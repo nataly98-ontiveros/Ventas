@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Ecommerce.Models.Productos>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Productos</h2>
+<br />
+<h3>Lista de productos NUEVOS <b>con precio</b> de venta <b>autorizados</b></h3>
+<br />
+<div class="container-fluid">
+    <div class="row m-5 table-responsive">
+        <table class="table shadow " id="dsTable">
+            <thead class=" text-center">
+                <tr>
+                    <th scope="col">Producto con Precio</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Precio de Compra</th>
+                    <th scope="col">Precio de venta sugerido</th>
+                    <th scope="col">Precio de venta autorizado</th>
+                    <th scope="col">Públicar producto</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach (var item in Model)
+                {
+                <tr id="prub">
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Marca)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Costo_unitario)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Precio_final)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Precio_final)</td>
+                    <td>
+                        @Html.ActionLink("Públicar Producto", "EditS", new { id = item.Id })
+                    </td>
+                </tr>
+                }
+
+
+                </tbody>
+        </table>
+    </div>
+</div>
+
+

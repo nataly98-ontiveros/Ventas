@@ -1,0 +1,113 @@
+﻿@model Ecommerce.Models.Productos
+
+@{
+    ViewBag.Title = "EditPrecio";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Editar Precio sugerido</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Productos</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+            @Html.HiddenFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.HiddenFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+
+        
+            @Html.HiddenFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+             
+
+        
+            @Html.HiddenFor(model => model.Url_image, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.Url_image, new { htmlAttributes = new { @class = "form-control" } })
+               
+
+        
+            @Html.HiddenFor(model => model.Sabor, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.Sabor, new { htmlAttributes = new { @class = "form-control" } })
+                
+
+        
+            @Html.HiddenFor(model => model.activo, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                    @Html.HiddenFor(model => model.activo)
+                    
+
+        
+            @Html.HiddenFor(model => model.Marca, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.Marca, new { htmlAttributes = new { @class = "form-control" } })
+                
+
+        
+            @Html.HiddenFor(model => model.Costo_unitario, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.Costo_unitario, new { htmlAttributes = new { @class = "form-control" } })
+               
+
+        
+            @Html.HiddenFor(model => model.Porcentage_descuento, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.Porcentage_descuento, new { htmlAttributes = new { @class = "form-control" } })
+                
+
+        
+            @Html.HiddenFor(model => model.stock, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.stock, new { htmlAttributes = new { @class = "form-control" } })
+                
+
+        
+            @Html.HiddenFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                
+
+        
+            @Html.HiddenFor(model => model.Time_Mount, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.Time_Mount, new { htmlAttributes = new { @class = "form-control" } })
+                
+
+        
+            @Html.HiddenFor(model => model.Time_Day, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.Time_Day, new { htmlAttributes = new { @class = "form-control" } })
+                
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Precio_final, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Precio_final, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Precio_final, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        
+            @Html.HiddenFor(model => model.Cantidad_ventas, htmlAttributes: new { @class = "control-label col-md-2" })
+            
+                @Html.HiddenFor(model => model.Cantidad_ventas, new { htmlAttributes = new { @class = "form-control" } })
+               
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Regresar a la lista de precios de nuevos productos", "Index")
+</div>

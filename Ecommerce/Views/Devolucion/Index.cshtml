@@ -1,0 +1,61 @@
+﻿
+    @{
+        /**/
+
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+
+    <h2>Devoluciones</h2>
+    <br />
+    <h3>Lista de <b>solicitudes</b> de devolución </h3>
+    <br />
+    <div class="container-fluid">
+        <div class="row m-5 table-responsive">
+            <table class="table shadow " id="dsTable">
+                <thead class=" text-center">
+                    <tr>
+                        <th scope="col">Fecha de solicitud</th>
+                        <th scope="col">ID compra</th>
+                        <th scope="col">Nombre del cliente</th>
+                        <th scope="col">Nombre de producto</th>
+                        <th scope="col">Status de devolución </th>
+                        <th scope="col">Más información de la solicitud</th>
+                        <th scope="col">Más información de la compra</th>
+                        <th scope="col">Cambiar status de Devolución</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    
+                    <tr id="prub">
+                        <td>22/06/2020</td>
+                        <td>2</td>
+                        <td>Nataly Ontiveros</td>
+                        <td>Paracetamol</td>
+                        <td><h5 id="aceptado" hidden >Aceptado</h5></td>
+                        <td>@Html.ActionLink("Info. Solicitud", "InfoSolicitud")</td>
+                        <td>@Html.ActionLink("Info. Compra", "InfoCompra")</td>
+                        <td><button class="btn btn-success" type="button" onclick="valido()">Aceptar</button></td>
+                        <td><button class="btn btn-warning" onclick="novalido()">Rechazar</button></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script>
+        function valido() {
+            document.getElementById('aceptado').removeAttribute('hidden');
+        }
+
+        
+
+        function enviar(row) {
+            var d = row.parentNode.parentNode.rowIndex;
+            document.getElementById('dsTable').deleteRow(d);
+        }
+    </script>
+
