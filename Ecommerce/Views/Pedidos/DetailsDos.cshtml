@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+<h2>Detalles de la compra</h2>
+<form>
+    <p>
+        <button class="btn btn-light" formaction="/Pedidos">Regresar a Mis Pedidos</button>
+    </p>
+</form>
+<table class="table">
+    <thead class=" text-center">
+        <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Total</th>
+            <th scope="col">Solicitar devolución</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr id="prub">
+            <td>Ibuprofeno</td>
+            <td>Roche</td>
+            <td>1</td>
+            <td>$260.00</td>
+            <td><h3>Fecha para realizar solicitud vencida </h3></td>
+        </tr>
+    </tbody>
+</table>

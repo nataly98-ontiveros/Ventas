@@ -1,0 +1,171 @@
+﻿@using Ecommerce.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<aside id="colorlib-hero" class="breadcrumbs">
+    <div class="flexslider">
+        <ul class="slides">
+            <li style="background-image: url(../../Estilos/images/fondomdicina.jpeg);">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h1>Mis Pedidos</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<div class="colorlib-shop">
+
+    <div class="alert alert-warning" role="alert">
+        <h3>Mis pedidos</h3>
+    </div>
+
+    <div class="container">
+        <div class="row row-pb-md">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="alert alert-light">
+                    <div class="alert-heading">
+                        <h4>Folio de compra: 1025 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Status de la compra: Entregado &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fecha de entrega: 15/06/2020 </h4>
+                        <a>@Html.ActionLink("Ver detalles de Compra", "Details", "Pedidos")</a>
+                    </div>
+                    <div class="row m-5 table-responsive product-name">
+                        <table class="table shadow " id="dsTable">
+                            <thead class=" text-center">
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Marca</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr id="prub">
+                                    <td>Ibuprofeno</td>
+                                    <td>Roche</td>
+                                    <td>1</td>
+                                    <td>$260</td>
+                                </tr>
+                                <tr id="prub">
+                                    <td>Treda</td>
+                                    <td>Roche</td>
+                                    <td>2</td>
+                                    <td>$250</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-12 col-md-offset-7">
+                                <div class="total-wrap">
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-push-1 text-center">
+                                            <div class="total">
+                                                <div class="sub">
+                                                </div>
+                                                <div class="grand-total">                                                    
+                                                    <p><span><strong>Total:</strong></span> <span> $510 MXN</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row row-pb-md">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="alert alert-light">
+                    <div class="alert-heading">
+                        <h4>Folio de compra: 0914 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Status de la compra: Entregado &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fecha de entrega: 05/06/2020 </h4>
+                        <a>@Html.ActionLink("Ver detalles de Compra", "DetailsDos", "Pedidos")</a>
+                    </div>
+                    <div class="row m-5 table-responsive product-name">
+                        <table class="table shadow " id="dsTable">
+                            <thead class=" text-center">
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Marca</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr id="prub">
+                                    <td>Ibuprofeno</td>
+                                    <td>Roche</td>
+                                    <td>1</td>
+                                    <td>$260.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-12 col-md-offset-7">
+                                <div class="total-wrap">
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-push-1 text-center">
+                                            <div class="total">
+                                                <div class="sub">
+                                                </div>
+                                                <div class="grand-total">
+                                                    <p><span><strong>Total:</strong></span> <span> $260 MXN</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terminar compra</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-primary" role="alert">
+                    <b>¿Finalizar la compra?</b>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <!--
+                <a class="btn btn-primary" href="@Url.Action("TerminarCompra", "Carrito")/">
+                    Finalizar compra
+                </a>-->
+                <button type="button" class="btn btn-primary" id="finish">Terminar compra</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+
+
+

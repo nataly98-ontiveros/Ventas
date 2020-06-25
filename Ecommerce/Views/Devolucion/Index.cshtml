@@ -20,6 +20,7 @@
                         <th scope="col">Nombre del cliente</th>
                         <th scope="col">Nombre de producto</th>
                         <th scope="col">Status de devolución </th>
+                        <th scope="col">Decripción de Status</th>
                         <th scope="col">Más información de la solicitud</th>
                         <th scope="col">Más información de la compra</th>
                         <th scope="col">Cambiar status de Devolución</th>
@@ -31,14 +32,13 @@
                         <td>22/06/2020</td>
                         <td>2</td>
                         <td>Nataly Ontiveros</td>
-                        <td>Paracetamol</td>
-                        <td><h5 id="aceptado" hidden >Aceptado</h5></td>
+                        <td>Ibuprofeno</td>
+                        <td><h5 id="aceptado" >Aceptado</h5></td>
+                        <td>Fechas validas y motivos validos</td>
                         <td>@Html.ActionLink("Info. Solicitud", "InfoSolicitud")</td>
                         <td>@Html.ActionLink("Info. Compra", "InfoCompra")</td>
-                        <td><button class="btn btn-success" type="button" onclick="valido()">Aceptar</button></td>
-                        <td><button class="btn btn-warning" onclick="novalido()">Rechazar</button></td>
-                    </tr>
-                    
+                        <td>@Html.ActionLink("Cambiar", "Estatus", "Devolucion")</td>                        
+                    </tr>                    
                 </tbody>
             </table>
         </div>

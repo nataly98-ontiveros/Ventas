@@ -185,6 +185,7 @@
     <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Controllers\PreciosAutorizadosController.cs" />
     <Compile Include="Controllers\PreciosAutorizadosExisController.cs" />
     <Compile Include="Controllers\PreciosController.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\Catalogos.cs" />
+    <Compile Include="Models\Pedidos.cs" />
     <Compile Include="Models\Clientes.cs" />
     <Compile Include="Models\Devolucion.cs" />
     <Compile Include="Models\Precios.cs" />
@@ -595,6 +597,10 @@
     <Content Include="Views\Devolucion\InfoCompra.cshtml" />
     <Content Include="Views\Devolucion\EditSolicitud.cshtml" />
     <Content Include="Views\ActualizarPrecios\EditDesc.cshtml" />
+    <Content Include="Views\Pedidos\Index.cshtml" />
+    <Content Include="Views\Pedidos\Details.cshtml" />
+    <Content Include="Views\Pedidos\DetailsDos.cshtml" />
+    <Content Include="Views\Devolucion\Estatus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

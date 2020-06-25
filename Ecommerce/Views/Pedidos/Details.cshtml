@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+<h2>Detalles de la compra</h2>
+<form>
+    <p>
+        <button class="btn btn-light" formaction="/Pedidos">Regresar a Mis Pedidos</button>
+    </p>
+</form>
+<table class="table">
+    <thead class=" text-center">
+        <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Total</th>
+            <th scope="col">Solicitar devolución</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr id="prub">
+            <td>Ibuprofeno</td>
+            <td>Roche</td>
+            <td>1</td>
+            <td>$260.00</td>
+            <td><button class="btn btn-primary" id="btn-soli" onclick="solicitarSoli()">Solicitar</button> <h3 hidden id="mensaje">Solicitud enviada</h3> </td>
+        </tr>        
+        <tr id="prub">
+            <td>Treda</td>
+            <td>Roche</td>
+            <td>2</td>
+            <td>$250.00</td>
+            <td><button class="btn btn-primary" id="btn-soli2" onclick="solicitarSoli2()" >Solicitar</button> <h3 hidden id="mensaje2">Solicitud enviada</h3></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="panel panel-info" id="solicitud" hidden>    
+    <div class="panel panel-heading">
+        <h3>Solicitud de devolución</h3>
+        <br />
+        <h5>¿Por qué quieres devolver el producto?</h5>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Pedido accidental</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Calidad no adecuada</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Inadecuado</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">El producto está dañado</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Llegó demasiado tarde</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">El producto venia abierto</label>
+        <br /><br />
+        <h5>Describe los motivos</h5>
+        <textarea placeholder="Describe los motivos..." cols="1200" rows="5"></textarea>
+        <br /><br /><br />
+        <button class="btn btn-primary" onclick="bloquearAcep()">Aceptar</button>
+        <button class="btn btn-default" onclick="bloquear()">Cancelar</button>
+    </div>
+</div>
+
+<div class="panel panel-info" id="solicitud2" hidden>
+    <div class="panel panel-heading">
+
+        <h3>Solicitud de devolución</h3>
+        <br />
+        <h5>Cantidad a devolver</h5>
+        <select>
+            <option value="">Selecciona una opción</option>
+            <option>1</option>
+            <option>2</option>
+        </select>
+        <br /><br />
+        <h5>¿Por qué quieres devolver el producto?</h5>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Pedido accidental</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Calidad no adecuada</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Inadecuado</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">El producto está dañado</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Llegó demasiado tarde</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">El producto venia abierto</label>
+        <br /><br />
+        <h5>Describe los motivos</h5>
+        <textarea placeholder="Describe los motivos..." cols="1200" rows="5"></textarea>
+        <br /><br /><br />
+        <button class="btn btn-primary" onclick="bloquearAcep2()">Aceptar</button>
+        <button class="btn btn-default" onclick="bloquear()">Cancelar</button>
+    </div>
+</div>
+
+<script>
+    function solicitarSoli() {
+        document.getElementById("solicitud").removeAttribute("hidden");        
+    }
+
+    function solicitarSoli2() {
+        document.getElementById("solicitud2").removeAttribute("hidden");
+    }
+
+    function bloquear() {
+        document.getElementById("solicitud").setAttribute("hidden","true");
+        document.getElementById("solicitud2").setAttribute("hidden", "true");
+    }
+
+    function bloquearAcep() {
+        document.getElementById("mensaje").removeAttribute("hidden");
+        document.getElementById("btn-soli").setAttribute("disabled", "true");
+        document.getElementById("solicitud").setAttribute("hidden", "true");
+    }
+
+    function bloquearAcep2() {
+        document.getElementById("mensaje2").removeAttribute("hidden");
+        document.getElementById("btn-soli2").setAttribute("disabled", "true");
+        document.getElementById("solicitud2").setAttribute("hidden", "true");
+    }
+</script>

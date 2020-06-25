@@ -20,6 +20,11 @@ namespace Ecommerce.Controllers
             return View(productos);
         }
 
+        public ActionResult EditDesc()
+        {
+            return View();
+        }
+
         // GET: Productos/Details
         [Authorize(Roles = "Empleado")]
         public ActionResult Details(int? id)
@@ -43,18 +48,7 @@ namespace Ecommerce.Controllers
         }
 
 
-        [Authorize(Roles = "Empleado")]
-        public ActionResult EditDesc(int id, int por)
-        {
-            ApplicationDbContext db = new ApplicationDbContext();
-            Productos prod = db.Productos.Find(id);
-            double final = prod.Precio_final;
-            double desc = final * por/100;
-            prod.Precio_Antiguo = desc;
-            db.SaveChanges();
-            return View(prod);
-        }
-
+        
         // POST: AUCTUALIZAR PRODUCTOS
         [HttpGet]
         [Authorize(Roles = "Empleado")]

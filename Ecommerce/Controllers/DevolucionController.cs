@@ -19,6 +19,11 @@ namespace Ecommerce.Controllers
             return View(cliente);
         }
 
+        public ActionResult Estatus()
+        {            
+            return View();
+        }
+
         // GET: Productos/Details
         [Authorize(Roles = "Empleado")]
         public ActionResult InfoSolicitud()
